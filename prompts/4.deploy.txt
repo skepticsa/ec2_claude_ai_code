@@ -1,0 +1,29 @@
+Execute a controlled deployment process with automatic rollback on failure:
+
+1. Deployment Phase:
+   - Run the command: 'terraform apply -auto-approve'
+   - Capture and display the complete command output
+   - If deployment succeeds, proceed to step 3
+   - If deployment fails, proceed to step 2
+
+2. Rollback Phase (on failure):
+   - Document the specific errors that caused the deployment to fail
+   - Run the command: 'terraform destroy -auto-approve'
+   - Verify that all resources have been successfully destroyed
+   - Make necessary corrections to address the identified errors
+   - Return to step 1 to attempt deployment again
+
+3. Success Confirmation:
+   - When deployment succeeds, display the complete output including all created resources
+   - Provide a summary of any errors encountered during previous attempts and how they were resolved
+   - Confirm that all specified infrastructure has been properly deployed
+
+Critical Requirements:
+- Execute Terraform commands sequentially, never in parallel
+- Wait for each command to fully complete before proceeding
+- Maintain a single Terraform process/thread at all times
+- Document each deployment attempt with timestamps
+- Keep track of all errors and their resolutions
+- Continue the deployment-rollback cycle until successful deployment is achieved
+
+Present a final deployment report including successful resource creation outputs and connection information.

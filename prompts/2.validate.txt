@@ -1,0 +1,23 @@
+Execute an iterative validation process for the Terraform code:
+
+1. First, run 'terraform validate' to check the syntax and configuration
+   - If validation passes, proceed to step 2
+   - If validation fails, analyze each error message carefully
+   - Make specific corrections to address each validation error
+   - Document what changes were made and why
+   - Run 'terraform validate' again until it passes
+
+2. Once validation passes, run 'terraform plan' to preview the infrastructure changes
+   - If the plan succeeds without errors, display the complete plan output
+   - If the plan fails, identify and fix each error in the code
+   - Document what changes were made to fix each plan error
+   - Run 'terraform validate' followed by 'terraform plan' again
+
+3. Important execution rules:
+   - Execute only one Terraform command at a time
+   - Always show the full command output for debugging purposes
+   - Continue this validation-fix-revalidate loop until both commands execute successfully
+   - Maintain a running log of all errors encountered and how they were resolved
+   - Ensure each fix is minimal and targeted to the specific error
+
+Present the final validated and successfully planned Terraform configuration along with a summary of any corrections made during the process.

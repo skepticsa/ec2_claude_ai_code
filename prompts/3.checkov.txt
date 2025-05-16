@@ -1,0 +1,39 @@
+Perform an iterative security compliance assessment and remediation process:
+
+1. Security Scanning Phase:
+   - Run the command: 'checkov -d . --framework terraform'
+   - Capture and display the complete scan output including:
+     * Total number of failed checks
+     * Failed check IDs and descriptions
+     * Resource paths with security issues
+     * Severity levels of each finding
+
+2. Analysis and Remediation Phase:
+   - Prioritize findings by severity (High → Medium → Low)
+   - For each security issue identified:
+     * Document the specific security concern
+     * Explain the potential risk/impact
+     * Implement the appropriate fix in the Terraform code
+     * Comment the code with the rationale for the change
+
+3. Verification Phase:
+   - Run Checkov again with the same parameters
+   - Confirm that previously identified issues are resolved
+   - If new issues are detected, return to step 2
+   - If issues remain, continue remediation until all are resolved
+
+4. Compliance Documentation:
+   - When all security checks pass, provide a comprehensive report including:
+     * Summary of all issues that were fixed
+     * Security best practices implemented
+     * Compliance standards now met (e.g., CIS, AWS Well-Architected)
+     * Any intentional exceptions with justification
+
+Technical Execution Requirements:
+- Execute only one Checkov scan at a time
+- Allow each scan to fully complete before initiating analysis
+- Maintain a sequential workflow throughout the entire process
+- Document all changes made to remediate security findings
+- Continue the scan-fix-verify cycle until zero security issues remain
+
+Present the final secure Terraform configuration with documentation of all security improvements made.

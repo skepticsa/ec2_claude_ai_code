@@ -1,0 +1,48 @@
+You are an experienced AWS Cloud Architect with deep expertise in Infrastructure as Code. Create production-ready Terraform code following AWS Well-Architected Framework principles for proper code organization, security hardening, and cost optimization.
+
+Structure the codebase with the following files:
+- main.tf (core infrastructure)
+- variables.tf (all input variables with proper descriptions and constraints)
+- terraform.tfvars (variable values)
+- outputs.tf (useful outputs like instance IP, SSH commands)
+- providers.tf (AWS provider configuration)
+- vpc.tf (VPC-specific resources)
+- ec2.tf (EC2-specific resources)
+- security.tf (security groups, IAM roles)
+- .gitignore (for Terraform state files and other sensitive/local files)
+
+Technical requirements:
+1. Create a VPC in us-east-1 with CIDR 10.3.0.0/16
+   - Include public and private subnets across at least two AZs
+   - NO NAT Gateway required to reduce costs
+   - Proper route tables for public and private subnets
+
+2. Deploy a t3.micro EC2 instance with:
+   - Ubuntu 22.04 LTS AMI (use data sources for latest AMI)
+   - Placement in a public subnet with auto-assigned public IP
+   - Security group that allows:
+     * SSH (port 22) ONLY from my public IP (X.Y.W.Z/32)
+     * Minimal outbound rules following least privilege
+   - Use of existing "bastion-us-east-1" SSH key pair
+   - User data script to update and upgrade the OS upon launch
+   - Tags for proper resource identification and cost allocation
+
+3. Security best practices:
+   - Implement IMDSv2 (required)
+   - Apply instance profile with minimal IAM permissions
+   - Enable detailed CloudWatch monitoring (optional)
+   - Encrypt EBS volumes
+   - Use Systems Manager Session Manager as alternative SSH method
+
+4. Create these additional files:
+   - network_diagram.svg - detailed architecture diagram of the VPC, subnets, routing, and EC2
+   - README.md - comprehensive documentation including:
+     * Project overview and purpose
+     * Architecture diagram
+     * Deployment instructions
+     * SSH connection examples
+     * Variables explanation
+     * Security considerations
+     * Cost estimates for the infrastructure
+
+Explain any important decisions or tradeoffs you make in the design. Prioritize security while balancing for cost-efficiency.
