@@ -12,8 +12,6 @@ This repository contains production-ready Terraform code for deploying a secure 
 2. **Subnets**: Public and private subnets across 2 availability zones
 3. **EC2 Instance**: t3.micro bastion host in public subnet with:
    - Ubuntu 22.04 LTS
-   - Instance ID: i-0abe09204bf37a402
-   - Public IP: 3.84.206.156
    - Enhanced security with IMDSv2
    - Encrypted EBS volumes
    - Systems Manager Session Manager support
@@ -136,7 +134,7 @@ $(terraform output -raw ssm_command)
 
 2. **Instance Security**:
    - IMDSv2 enforced
-   - EBS volumes encrypted with KMS (Key ID: 57769034-1aba-4c76-93a7-22deb16b4625)
+   - EBS volumes encrypted with KMS
    - Automatic security updates via unattended-upgrades
    - Fail2ban protects against brute force attacks
 
@@ -194,16 +192,6 @@ cd terraform
 terraform destroy
 ```
 
-## Current Deployment Status
-
-**Infrastructure is currently deployed with:**
-- VPC ID: vpc-077ffa46d14760dd4
-- Instance ID: i-0abe09204bf37a402 
-- Public IP: 3.84.206.156
-- Security Group: sg-08236330645efb9a7
-- CloudWatch Log Group: /aws/ec2/bastion-ec2
-- VPC Flow Logs S3 Bucket: bastion-ec2-flow-logs-20250516162901387100000001
-
 ## Important Files
 
 - **terraform.tfvars**: Contains production configuration including actual IP addresses. This file is gitignored. Create it from terraform.tfvars.dev template.
@@ -219,4 +207,4 @@ terraform destroy
 
 ## License
 
-[Your License Here]
+MIT License - see the LICENSE file for details.
