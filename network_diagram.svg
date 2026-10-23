@@ -7,7 +7,7 @@
 
   <!-- VPC -->
   <rect x="100" y="150" width="1000" height="550" fill="#ffffff" stroke="#ff9900" stroke-width="3" rx="10"/>
-  <text x="130" y="190" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff9900">VPC: 10.3.0.0/16 (vpc-077ffa46d14760dd4)</text>
+  <text x="130" y="190" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#ff9900">VPC: 10.3.0.0/16 (vpc-xxxxxxxx)</text>
 
   <!-- Internet Gateway -->
   <rect x="550" y="50" width="100" height="60" fill="#ffffff" stroke="#ff9900" stroke-width="2" rx="5"/>
@@ -21,7 +21,7 @@
   <!-- Public Subnet 1 -->
   <rect x="180" y="280" width="370" height="150" fill="#e8f5ff" stroke="#0073bb" stroke-width="2" rx="5"/>
   <text x="200" y="310" font-family="Arial, sans-serif" font-size="16" fill="#0073bb">Public Subnet: 10.3.1.0/24</text>
-  <text x="200" y="330" font-family="Arial, sans-serif" font-size="12" fill="#0073bb">(subnet-02868deff9a43a562)</text>
+  <text x="200" y="330" font-family="Arial, sans-serif" font-size="12" fill="#0073bb">(subnet-xxxxxxxx)</text>
 
   <!-- EC2 Instance -->
   <rect x="320" y="330" width="80" height="80" fill="#ff9900" stroke="#232f3e" stroke-width="2" rx="5"/>
@@ -45,7 +45,7 @@
   <!-- Public Subnet 2 -->
   <rect x="650" y="280" width="370" height="150" fill="#e8f5ff" stroke="#0073bb" stroke-width="2" rx="5"/>
   <text x="670" y="310" font-family="Arial, sans-serif" font-size="16" fill="#0073bb">Public Subnet: 10.3.2.0/24</text>
-  <text x="670" y="330" font-family="Arial, sans-serif" font-size="12" fill="#0073bb">(subnet-0aa4efb5d2e626dc3)</text>
+  <text x="670" y="330" font-family="Arial, sans-serif" font-size="12" fill="#0073bb">(subnet-xxxxxxxx)</text>
 
   <!-- Private Subnet 2 -->
   <rect x="650" y="460" width="370" height="130" fill="#fff3e0" stroke="#ff9900" stroke-width="2" rx="5"/>
